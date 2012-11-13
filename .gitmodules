@@ -1,6 +1,7 @@
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/nerdtree"]                                               
+	path = bundle/nerdtree                                                    
+	url = https://github.com/scrooloose/nerdtree.git                              
+	ignore = dirty
 [submodule "bundle/vim-smartinput"]
 	path = bundle/vim-smartinput
 	url = git://github.com/kana/vim-smartinput.git

@@ -1,13 +1,18 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+  endif
+
 au VimEnter *  NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeDirArrows=0
 
-autocmd BufWritePost *.py call Flake8() 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+autocmd BufWritePost *.py call Flake8() 
 let g:flake8_ignore="E501,W293,W191,W291,E223,E401,E121,E128,E302,E251,E123,E201,E202,E122"
 let g:flake8_builtins="_,apply"
 

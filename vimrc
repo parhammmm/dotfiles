@@ -1,38 +1,28 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-  endif
-
-au VimEnter *  NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeIgnore = ['\.pyc$']
-let g:NERDTreeDirArrows=0
-
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-autocmd BufWritePost *.py call Flake8() 
-let g:flake8_ignore="E501,W293,W191,W291,E223,E401,E121,E128,E302,E251,E123,E201,E202,E122"
-let g:flake8_builtins="_,apply"
-
-syntax on
-
-filetype on
-filetype plugin on
+autocmd vimenter * NERDTree
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.swo$', '\.swn$', '\.coverage$', '\.git$']
 
 set autoindent
+set number
+set hlsearch
+set hidden
+
+set noexpandtab 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-set number
-set hlsearch
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType babelrc setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 :nmap \e :NERDTreeToggle<CR>
 :nmap \q :nohlsearch<CR>
+:nmap \t :TagbarToggle<CR>
 
-:nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-:nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-:nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-:nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+let NERDTreeShowHidden=1
+let g:airline#extensions#tabline#enabled = 1 
+
+execute pathogen#infect()
+call pathogen#helptags()

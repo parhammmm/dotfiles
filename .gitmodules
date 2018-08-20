@@ -2,12 +2,7 @@
 	path = bundle/nerdtree                                                    
 	url = https://github.com/scrooloose/nerdtree.git                              
 	ignore = dirty
-[submodule "bundle/vim-smartinput"]
-	path = bundle/vim-smartinput
-	url = git://github.com/kana/vim-smartinput.git
-[submodule "bundle/pyflakes-vim"]
-	path = bundle/pyflakes-vim
-	url = git://github.com/kevinw/pyflakes-vim.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = git://git.wincent.com/command-t.git
+[submodule "bundle/vim-vue"]                                               
+	path = bundle/vim-vue                                                    
+	url = https://github.com/posva/vim-vue.git                             
+	ignore = dirty

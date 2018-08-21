@@ -11,11 +11,11 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType babelrc setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
+autocmd FileType babelrc setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
 
 :nmap \e :NERDTreeToggle<CR>
 :nmap \q :nohlsearch<CR>

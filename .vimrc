@@ -1,16 +1,21 @@
 autocmd vimenter * NERDTree
-let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.swo$', '\.swn$', '\.coverage$', '\.git$']
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.swo$', '\.swn$', '\.coverage$', '\.git$', '\.DS_Store$']
+
+filetype plugin on
+syntax on
 
 set autoindent
 set number
 set hlsearch
 set hidden
+set undofile
 
 set noexpandtab 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+set undodir=~/.vimundo
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
 autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab smarttab
